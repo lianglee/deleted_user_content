@@ -63,3 +63,9 @@ $form = elgg_view('input/form', array(
 ));
 
 echo elgg_view_module('main', $title, $form);
+
+
+$title = elgg_echo('duc:title:stats');
+$body = elgg_view('deleted_user_content/stats', array('entity' => $user));
+
+echo elgg_view_module('main', $title, $body);
