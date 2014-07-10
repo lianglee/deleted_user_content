@@ -40,7 +40,9 @@ function reassign_content($user1, $user2) {
 	
 	$q = "UPDATE {$dbprefix}metadata SET owner_guid = {$user2->guid} WHERE owner_guid = {$user1->guid}";
 	update_data($q);
-	
+	//should update group ownership
+	$q = "UPDATE {$dbprefix}groups_entity SET guid = {$user2->guid} WHERE guid = {$user1->guid}";
+	update_data($q);
 	return true;
 }
 
